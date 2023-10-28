@@ -35,7 +35,7 @@ export const AddTodo = () => {
                 <label className="hidden" htmlFor="add-content">Add new todo form</label>
                 <div className="flex join">
                     <input
-                        className="input input-bordered w-full join-item"
+                        className="input input-bordered input-lg w-full join-item"
                         id="add-content"
                         type="text"
                         placeholder="Enter a todo..."
@@ -43,7 +43,7 @@ export const AddTodo = () => {
                         {...register("content")}
                     />
                     <button
-                        className="btn btn-accent join-item"
+                        className="btn btn-accent btn-lg join-item"
                         type="submit"
                     >
                             Add todo

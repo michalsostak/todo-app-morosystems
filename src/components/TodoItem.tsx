@@ -37,10 +37,10 @@ export const TodoItem = ({ todo }: { todo: Todo }) => {
                     name={`checkbox-${todo.id}`}
                     id={`checkbox-${todo.id}`}
                     checked={todo.done}
-                    className="checkbox checkbox-primary ml-4"
+                    className="checkbox checkbox-success checkbox-lg border-2 ml-4"
                     onChange={onCheck}
                 />
-                <div className={`mx-14 text-xl ${todo.done ? "line-through" : ""}`}>
+                <div className={`mx-8 text-xl ${todo.done ? "line-through" : ""}`}>
                     {todo.content}
                 </div>
             </div>

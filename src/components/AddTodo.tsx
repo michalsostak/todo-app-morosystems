@@ -32,10 +32,11 @@ export const AddTodo = () => {
             <form
                 onSubmit={handleSubmit(onSubmit)}
             >
+                <label className="hidden" htmlFor="add-content">Add new todo form</label>
                 <div className="flex join">
                     <input
                         className="input input-bordered w-full join-item"
-                        id="content"
+                        id="add-content"
                         type="text"
                         placeholder="Enter a todo..."
                         autoComplete="off"
@@ -47,6 +48,7 @@ export const AddTodo = () => {
                     >
                             Add todo
                     </button>
+                    
                 </div>
                 {errors.content?.message && (
                     <div className="flex items-baseline justify-center my-4">

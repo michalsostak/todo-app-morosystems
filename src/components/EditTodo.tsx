@@ -41,10 +41,11 @@ export const EditTodo = (props: EditTodoProps) => {
     return (
         <div className="w-full mb-14 shadow-md">
             <form onSubmit={handleSubmit(onSubmit)}>
+                <label className="hidden" htmlFor={`"content-${todo.id}`}>Edit an existing todo form</label>
                 <div className="flex join">
                     <input
                         className="input input-bordered w-full join-item"
-                        id="content"
+                        id={`"content-${todo.id}`}
                         type="text"
                         placeholder={todo.content}
                         autoComplete="off"

@@ -34,6 +34,8 @@ export const TodoItem = ({ todo }: { todo: Todo }) => {
             <div className="flex items-center">
                 <input
                     type="checkbox"
+                    name={`checkbox-${todo.id}`}
+                    id={`checkbox-${todo.id}`}
                     checked={todo.done}
                     className="checkbox checkbox-primary ml-4"
                     onChange={onCheck}

@@ -4,6 +4,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { type Todo, TodoSchema } from "../types/todo";
 import { TodoContext } from "../Providers";
 import { useContext } from "react";
+
 type EditTodoProps = {
     todo: Todo;
     onEdit: () => void;

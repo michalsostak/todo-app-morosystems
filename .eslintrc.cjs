@@ -14,5 +14,17 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
+    '@typescript-eslint/no-unused-vars': [
+      'warn',
+      {
+        'argsIgnorePattern': '^_',
+        'varsIgnorePattern': '^_',
+        'caughtErrorsIgnorePattern': '^_'
+      }
+    ],
+    "quotes": [2, "double", { "avoidEscape": true }],
+    "indent": ["error", 4],
+    "newline-per-chained-call": "error",
+    "semi": [2, "always"]
   },
 }

@@ -5,12 +5,8 @@ export const ThemeToggle = () => {
         localStorage.getItem("theme") ?? "light"
     );
 
-    const handleCheck = (e: React.ChangeEvent<HTMLInputElement>) => {
-        if (e.target.checked) {
-            setTheme("light");
-        } else {
-            setTheme("dark");
-        }
+    const handleCheck = () => {
+        setTheme(theme === "dark" ? "light" : "dark");
     };
 
     useEffect(() => {
@@ -24,11 +20,14 @@ export const ThemeToggle = () => {
             <input
                 type="checkbox"
                 onChange={handleCheck}
+                name="theme toggle"
+                id="theme-toggle"
+                checked={theme === "dark"}
             />
 
             {/* sun icon */}
             <svg
-                className="swap-off fill-current w-10 h-10"
+                className="swap-on fill-current w-10 h-10"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
             >
@@ -37,7 +36,7 @@ export const ThemeToggle = () => {
 
             {/* moon icon */}
             <svg
-                className="swap-on fill-current w-10 h-10"
+                className="swap-off fill-current w-10 h-10"
                 xmlns="http://www.w3.org/2000/svg"
                 viewBox="0 0 24 24"
             >

@@ -12,7 +12,9 @@ export const TodosCount = () => {
     return (
         <div className="my-6 text-l flex items-center">
             Total Open todos:
-            <div className="text-3xl ml-2">{countNotDone(allTodos)}</div>
+            <div className="text-3xl ml-2">
+                {countNotDone(allTodos)}
+            </div>
         </div>
     );
 };

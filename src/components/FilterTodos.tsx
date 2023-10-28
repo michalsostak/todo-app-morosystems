@@ -18,8 +18,6 @@ export const FilterTodos = () => {
         setFilter(null);
     };
 
-    console.log(filter);
-
     return (
         <div className="flex flex-col gap-4 mt-14 px-4 lg:px-0 lg:flex-row">
             <button className={`btn ${filter ? "btn-info" : "btn-primary"}`} onClick={showDoneTodos}>Done</button>

@@ -5,8 +5,7 @@ export const ThemeToggle = () => {
     const [theme, setTheme] = useState<string>(
         storageTheme === null ||
             storageTheme === undefined ||
-            storageTheme === "light" ||
-            storageTheme === "retro"
+            storageTheme !== "dark"
             ? "retro"
             : "dark"
     );

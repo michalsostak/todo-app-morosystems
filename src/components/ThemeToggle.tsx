@@ -1,18 +1,23 @@
 import { useEffect, useState } from "react";
 
 export const ThemeToggle = () => {
+    const storageTheme = localStorage.getItem("theme");
     const [theme, setTheme] = useState<string>(
-        localStorage.getItem("theme") ?? "light"
+        storageTheme === null ||
+            storageTheme === undefined ||
+            storageTheme === "light" ||
+            storageTheme === "retro"
+            ? "retro"
+            : "dark"
     );
 
     const handleCheck = () => {
-        setTheme(theme === "dark" ? "light" : "dark");
+        setTheme(theme === "dark" ? "retro" : "dark");
     };
 
     useEffect(() => {
         localStorage.setItem("theme", theme);
-        const localTheme = localStorage.getItem("theme") ?? "light";
-        document.querySelector("html")?.setAttribute("data-theme", localTheme);
+        document.querySelector("html")?.setAttribute("data-theme", theme);
     }, [theme]);
 
     return (

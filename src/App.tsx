@@ -3,6 +3,7 @@ import { FilterTodos } from "./components/FilterTodos";
 import { Header } from "./components/Header";
 import { LayoutWrapper } from "./components/LayoutWrapper";
 import { ListTodos } from "./components/ListTodos";
+import { ThemeToggle } from "./components/ThemeToggle";
 import { TodosCount } from "./components/TodosCount";
 
 const App = () => {
@@ -13,6 +14,7 @@ const App = () => {
             <ListTodos />
             <FilterTodos />
             <TodosCount />
+            <ThemeToggle />
         </LayoutWrapper> 
     );
 };

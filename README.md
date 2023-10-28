@@ -13,5 +13,6 @@ This app has been creating using a ```npm create vite@latest``` Vite template wh
 
 ## How to Run
 
-Install dependencies by running ```npm install```
+Install dependencies using the ```npm install``` command
+
 Run by ```npm run dev``` (supports hot reload)

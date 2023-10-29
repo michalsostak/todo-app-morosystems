@@ -1,20 +1,20 @@
 import { type Todo } from "../types/todo";
 import { EditTodo } from "./EditTodo";
-import { useContext, useState } from "react";
+import { useCallback, useContext, useState } from "react";
 import { TodoContext } from "../Providers";
 
 export const TodoItem = ({ todo }: { todo: Todo }) => {
     const [allTodos, setAllTodos] = useContext(TodoContext);
     const [edit, setEdit] = useState<boolean>(false);
 
-    const onDelete = () => {
+    const onDelete = useCallback(() => {
         setAllTodos(allTodos.filter((t) => t.id !== todo.id));
-    };
+    }, [allTodos, setAllTodos, todo.id]);
 
-    const onCheck = () => {
+    const onCheck = useCallback(() => {
         const updatedTodo: Todo = { ...todo, done: !todo.done };
         setAllTodos(allTodos.map((t) => (t.id === todo.id ? updatedTodo : t)));
-    };
+    }, [allTodos, setAllTodos, todo]);
 
     const onEdit = () => {
         setEdit((edit) => !edit);
@@ -40,7 +40,11 @@ export const TodoItem = ({ todo }: { todo: Todo }) => {
                     className="checkbox checkbox-success checkbox-lg border-2 ml-4"
                     onChange={onCheck}
                 />
-                <div className={`mx-8 text-xl ${todo.done ? "line-through" : ""}`}>
+                <div
+                    className={`mx-8 text-xl ${
+                        todo.done ? "line-through" : ""
+                    }`}
+                >
                     {todo.content}
                 </div>
             </div>

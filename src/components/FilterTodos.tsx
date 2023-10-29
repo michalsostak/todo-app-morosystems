@@ -1,4 +1,4 @@
-import { useContext } from "react";
+import { useCallback, useContext } from "react";
 import { FilterContext } from "../Providers";
 import { RemoveDone } from "./RemoveDone";
 
@@ -6,17 +6,17 @@ import { RemoveDone } from "./RemoveDone";
 export const FilterTodos = () => {
     const [filter, setFilter] = useContext(FilterContext);
     
-    const showDoneTodos = () => {
+    const showDoneTodos = useCallback(() => {
         setFilter(true);
-    };
+    }, [setFilter]);
 
-    const showNotDoneTodos = () => {
+    const showNotDoneTodos = useCallback(() => {
         setFilter(false);
-    };
+    }, [setFilter]);
 
-    const clearFilter = () => {
+    const clearFilter = useCallback(() => {
         setFilter(null);
-    };
+    }, [setFilter]);
 
     return (
         <div className="flex flex-col gap-4 mt-14 px-4 lg:px-0 lg:flex-row">

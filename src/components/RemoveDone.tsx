@@ -1,13 +1,13 @@
 import { TodoContext } from "../Providers";
-import { useContext } from "react";
+import { useCallback, useContext } from "react";
 
 export const RemoveDone = () => {
     const [allTodos, setAllTodos] = useContext(TodoContext);
 
-    const handleRemoveAllDone = () => {
+    const handleRemoveAllDone = useCallback(() => {
         const openTodos = allTodos.filter((t) => !t.done);
         setAllTodos(openTodos);
-    };
+    }, [allTodos, setAllTodos]);
 
     return (
         <button

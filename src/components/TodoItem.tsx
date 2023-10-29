@@ -40,15 +40,15 @@ export const TodoItem = ({ todo }: { todo: Todo }) => {
                     className="checkbox checkbox-success checkbox-lg border-2 ml-4"
                     onChange={onCheck}
                 />
-                <div
-                    className={`mx-8 text-xl ${
+                <p
+                    className={`mx-8 text-xl break-all ${
                         todo.done ? "line-through" : ""
                     }`}
                 >
                     {todo.content}
-                </div>
+                </p>
             </div>
-            <div className="flex">
+            <div className="flex flex-col md:flex-row gap-2">
                 <button
                     className="btn btn-square btn-accent"
                     onClick={onEdit}
@@ -68,7 +68,7 @@ export const TodoItem = ({ todo }: { todo: Todo }) => {
                     </svg>
                 </button>
                 <button
-                    className="btn btn-square bg-error ml-1"
+                    className="btn btn-square bg-error"
                     onClick={onDelete}
                 >
                     <svg
